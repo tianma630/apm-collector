@@ -10,19 +10,19 @@
   },
   "author": {
     "name": "王军",
-    "email": "wangjun03@aikucun.com",
-    "url": "http://git.aikucun.xyz/wangjun03"
+    "email": "tianma630@foxmail.com",
+    "url": "https://github.com/tianma630"
   },
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "http://git.aikucun.xyz/np-fe/apm-collector"
+    "url": "https://github.com/tianma630/apm-collector"
   },
   "maintainers": [
     {
       "name": "王军",
-      "email": "wangjun03@aikucun.com",
-      "url": "http://git.aikucun.xyz/wangjun03"
+      "email": "tianma630@foxmail.com",
+      "url": "https://github.com/tianma630"
     }
   ],
   "devDependencies": {
@@ -32,5 +32,8 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "navigator.sendbeacon": "0.0.20"
   }
 }
