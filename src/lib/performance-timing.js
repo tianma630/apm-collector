@@ -1,0 +1,1 @@
+export const timing = window.performance.timing || {};

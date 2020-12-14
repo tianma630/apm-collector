@@ -1,0 +1,36 @@
+{
+  "name": "@akc/apm-collector",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.min.js",
+  "module": "./src/index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "build": "cross-env NODE_ENV=production webpack"
+  },
+  "author": {
+    "name": "王军",
+    "email": "wangjun03@aikucun.com",
+    "url": "http://git.aikucun.xyz/wangjun03"
+  },
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "http://git.aikucun.xyz/np-fe/apm-collector"
+  },
+  "maintainers": [
+    {
+      "name": "王军",
+      "email": "wangjun03@aikucun.com",
+      "url": "http://git.aikucun.xyz/wangjun03"
+    }
+  ],
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
