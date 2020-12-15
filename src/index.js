@@ -11,6 +11,8 @@ import resourceLoaded from './web-vitals/resource-loaded';
 import timeToFirstByte from './web-vitals/time-to-first-byte';
 import timeToInteractive from './web-vitals/time-to-interactive';
 
+import { url, page, ua, system, platform, brand } from './env-vitals';
+
 const report = Reportor('http://127.0.0.1:7001/report')
 
 const promises = [
@@ -26,7 +28,6 @@ const promises = [
 ];
 
 Promise.all(promises).then(d => {
-    console.log('d', d)
     report({
         firstPaint: d[0],
         firstContentfulPaint: d[1],
@@ -37,5 +38,12 @@ Promise.all(promises).then(d => {
         resourceLoaded: d[6],
         timeToFirstByte: d[7],
         timeToInteractive: d[8],
+
+        url,
+        page,
+        ua,
+        system,
+        platform,
+        brand
     })
 });
