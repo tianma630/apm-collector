@@ -11,7 +11,6 @@ export let brand = '';
 let arr = /\((.+?)\)/.exec(ua);
 if (arr) {
     let syss = arr[1].split('; ');
-    console.log(syss)
 
     system = syss[0];
     platform = syss[1];
