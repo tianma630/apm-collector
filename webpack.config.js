@@ -17,7 +17,7 @@ const htmlPlugin = new HtmlWebpackPlugin({
 
 const webpackConfig = {
   output: {
-    filename: 'index.min.js',
+    filename: 'collector.min.js',
     path: path.resolve(__dirname, 'dist'),
   }
 };

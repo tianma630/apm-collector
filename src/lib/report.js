@@ -4,7 +4,7 @@ const Reportor = url => data => {
     // }]);
     // navigator.sendBeacon(url, blob);
 
-    navigator.sendBeacon(url, JSON.stringify(data))
+    navigator.sendBeacon(url, JSON.stringify(data));
 }
 
 export default Reportor;

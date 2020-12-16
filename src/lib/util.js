@@ -3,7 +3,7 @@ export function useDefer(po, resolve, t) {
         po && po.disconnect();
         resolve && resolve(-1);
         clearTimer();
-    }, t || 10 * 1000);
+    }, t || 5 * 1000);
 
     function clearTimer() {
         if (timer) {

@@ -13,8 +13,6 @@ import timeToInteractive from './web-vitals/time-to-interactive';
 
 import { url, page, ua, system, platform, brand } from './env-vitals';
 
-const report = Reportor('http://127.0.0.1:7001/report')
-
 const promises = [
     firstPaint,
     firstContentfulPaint,
@@ -27,23 +25,51 @@ const promises = [
     timeToInteractive,
 ];
 
-Promise.all(promises).then(d => {
-    report({
-        firstPaint: d[0],
-        firstContentfulPaint: d[1],
-        largestContentfulPaint: d[2],
-        firstMeaningfulPaint: d[3],
-        domContentLoaded: d[4],
-        firstInputDelay: d[5],
-        resourceLoaded: d[6],
-        timeToFirstByte: d[7],
-        timeToInteractive: d[8],
+function collect(path, sampleRate = 1, tags = {}) {
+    if (Math.random() < sampleRate) {
+        Promise.all(promises).then(d => {
+            console.log({
+                firstPaint: d[0],
+                firstContentfulPaint: d[1],
+                largestContentfulPaint: d[2],
+                firstMeaningfulPaint: d[3],
+                domContentLoaded: d[4],
+                firstInputDelay: d[5],
+                resourceLoaded: d[6],
+                timeToFirstByte: d[7],
+                timeToInteractive: d[8],
 
-        url,
-        page,
-        ua,
-        system,
-        platform,
-        brand
-    })
-});
+                url,
+                page,
+                ua,
+                system,
+                platform,
+                brand,
+
+                tags: JSON.stringify(tags)
+            })
+            Reportor(path)({
+                firstPaint: d[0],
+                firstContentfulPaint: d[1],
+                largestContentfulPaint: d[2],
+                firstMeaningfulPaint: d[3],
+                domContentLoaded: d[4],
+                firstInputDelay: d[5],
+                resourceLoaded: d[6],
+                timeToFirstByte: d[7],
+                timeToInteractive: d[8],
+
+                url,
+                page,
+                ua,
+                system,
+                platform,
+                brand,
+
+                tags: JSON.stringify(tags)
+            })
+        });
+    }
+}
+
+collect('http://10.199.120.208:7001/report');
