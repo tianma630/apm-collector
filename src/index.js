@@ -18,11 +18,7 @@ const promises = [
     firstContentfulPaint,
     largestContentfulPaint,
     firstMeaningfulPaint,
-    domContentLoaded,
     firstInputDelay,
-    resourceLoaded,
-    timeToFirstByte,
-    timeToInteractive,
 ];
 
 function collect(path, sampleRate = 1, tags = {}) {
@@ -33,11 +29,12 @@ function collect(path, sampleRate = 1, tags = {}) {
                 firstContentfulPaint: d[1],
                 largestContentfulPaint: d[2],
                 firstMeaningfulPaint: d[3],
-                domContentLoaded: d[4],
-                firstInputDelay: d[5],
-                resourceLoaded: d[6],
-                timeToFirstByte: d[7],
-                timeToInteractive: d[8],
+                firstInputDelay: d[4],
+
+                domContentLoaded: domContentLoaded(),
+                resourceLoaded: resourceLoaded(),
+                timeToFirstByte: timeToFirstByte(),
+                timeToInteractive: timeToInteractive(),
 
                 url,
                 page,
@@ -53,11 +50,12 @@ function collect(path, sampleRate = 1, tags = {}) {
                 firstContentfulPaint: d[1],
                 largestContentfulPaint: d[2],
                 firstMeaningfulPaint: d[3],
-                domContentLoaded: d[4],
-                firstInputDelay: d[5],
-                resourceLoaded: d[6],
-                timeToFirstByte: d[7],
-                timeToInteractive: d[8],
+                firstInputDelay: d[4],
+
+                domContentLoaded: domContentLoaded(),
+                resourceLoaded: resourceLoaded(),
+                timeToFirstByte: timeToFirstByte(),
+                timeToInteractive: timeToInteractive(),
 
                 url,
                 page,
