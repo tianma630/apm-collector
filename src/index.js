@@ -24,27 +24,6 @@ const promises = [
 function collect(path, sampleRate = 1, tags = {}) {
     if (Math.random() < sampleRate) {
         Promise.all(promises).then(d => {
-            console.log({
-                firstPaint: d[0],
-                firstContentfulPaint: d[1],
-                largestContentfulPaint: d[2],
-                firstMeaningfulPaint: d[3],
-                firstInputDelay: d[4],
-
-                domContentLoaded: domContentLoaded(),
-                resourceLoaded: resourceLoaded(),
-                timeToFirstByte: timeToFirstByte(),
-                timeToInteractive: timeToInteractive(),
-
-                url,
-                page,
-                ua,
-                system,
-                platform,
-                brand,
-
-                tags: JSON.stringify(tags)
-            })
             Reportor(path)({
                 firstPaint: d[0],
                 firstContentfulPaint: d[1],

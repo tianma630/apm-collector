@@ -1,5 +1,5 @@
 export const url = location.href;
-export const page = location.origin + location.pathname;
+export const page = location.pathname;
 export const ua = navigator.userAgent || '';
 export let system = '';
 export let platform = '';
